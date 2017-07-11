@@ -8,8 +8,13 @@
 	<name>almproject Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
-	
-	
+	<scm>
+		<url>https://github.com/tecdanilo/almproject</url>
+		<connection>scm:git:https://github.com/tecdanilo/almproject.git</connection>
+		<tag>HEAD</tag>
+	</scm>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>javax</groupId>
@@ -37,6 +42,25 @@
 				</configuration>
 			</plugin>
 			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<tag>v${releaseVersion}</tag>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<!-- releaseProfiles configuration will actually force a Maven profile 
+						– the `releases` profile – to become active during the Release process. -->
+					<releaseProfiles>releases</releaseProfiles>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-scm-plugin</artifactId>
+						<version>1.8.1</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
 				<groupId>org.codehaus.cargo</groupId>
 				<artifactId>cargo-maven2-plugin</artifactId>
 				<configuration>
@@ -54,16 +78,12 @@
 	<distributionManagement>
 		<repository>
 			<id>Releases</id>
-			<url>
-			http://localhost:8888/nexus/content/repositories/releases/
-			</url>
+			<url>http://localhost:18081/nexus/content/repositories/releases/</url>
 		</repository>
 		<snapshotRepository>
 			<id>Snapshots</id>
-			<url>
-			http://localhost:8888/nexus/content/repositories/releases/
-		</url>
+			<url>http://localhost:18081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
-
+	<!-- https://github.com/tecdanilo/almproject.git -->
 </project>
