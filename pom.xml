@@ -84,5 +84,5 @@
 			<url>http://localhost:18081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
-	<!-- https://github.com/tecdanilo/almproject.git -->
+	
 </project>
