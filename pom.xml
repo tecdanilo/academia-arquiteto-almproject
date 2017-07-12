@@ -3,14 +3,14 @@
 	<groupId>globalcode.arquiteto</groupId>
 	<artifactId>almproject</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<name>almproject Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<scm>
 		<url>https://github.com/tecdanilo/almproject</url>
 		<connection>scm:git:https://github.com/tecdanilo/almproject.git</connection>
-		<tag>v${releaseVersion}</tag>
+		<tag>v0.0.2</tag>
 	</scm>
 
 
